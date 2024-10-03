@@ -27,7 +27,7 @@ server.keepAliveTimeout = 61 * 1000;
 // define a rota para o pacote /routes
 app.use(routes);
 
-/*// importando tabela grupo
+// importando tabela grupo
 var rl = readline.createInterface({
     input: fs.createReadStream('./src/Taco-Grupo.csv'),
     output: process.stdout,
@@ -100,7 +100,6 @@ rl.on('line', function (linha: any) { // função que lê linha a linha do arqui
 })
 
 rl.close; // fecha a função rl para o arquivo não constar como aberto pelo SO
-*/
 
 // importando tabela produtos
 
