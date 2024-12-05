@@ -1,15 +1,15 @@
-import { Router, Request, Response } from "express";
+import express from 'express';
+import cors from 'cors';
 import grupo from './grupo';
-import preparacao from './preparacao';
 import produto from './produto';
+import prodprep from './prodprep';
 
-const routes = Router();
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-routes.use("/grupo", grupo);
-routes.use("/preparacao", preparacao);
-routes.use("/produto", produto);
+app.use('/getGrupo', grupo);
+app.use('/getProduto', produto);
+app.use('/getProdPrep', prodprep);
 
-//aceita qualquer método HTTP ou URL
-routes.use( (_:Request,res:Response) => res.json({error:"Requisição desconhecida"}) );
-
-export default routes;
+export default app;

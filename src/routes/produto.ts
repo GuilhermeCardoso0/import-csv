@@ -1,10 +1,8 @@
 import { Router } from "express";
-import controller from "../controllers/ProdutoController";
-const routes = Router();
--
-routes.post('/', controller.create);
-routes.get('/', controller.list);
-routes.delete('/', controller.delete);
-routes.put('/', controller.update);
+import  controller  from "../controllers/ProdutoController";
 
-export default routes;
+const router = Router();
+
+router.get("/", controller.list);
+
+export default router
